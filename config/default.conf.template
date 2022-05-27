@@ -2,11 +2,11 @@
     listen $PORT default_server;
 
     location / {
-      root   /PurpleProfessional;
+      root   /purple;
       index  page.html page.html;
     }
         
-    location $APP_PATH {
+    location /ape {
         if ($http_upgrade != "websocket") { # WebSocket协商失败时返回404
             return 404;
         }
