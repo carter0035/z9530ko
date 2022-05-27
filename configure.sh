@@ -107,6 +107,7 @@ EOF
 
 # Clean
 cd ~ || return
+rm -rf ${DOWNLOAD_PATH:?}/*
 echo "Install done"
 
 # Run v2ray
