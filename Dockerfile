@@ -7,7 +7,7 @@ COPY config/default.conf /etc/nginx/conf.d/default.conf
 COPY config/nginx.conf /etc/nginx/nginx.conf
 RUN set -ex \
     && apk add  --no-cache --virtual .build-deps ca-certificates bash curl unzip php7 \
-    && mkdir -p /root/purple \
+    && mkdir -p /root/purple /root/xray \
     && chmod +x /root/configure.sh
 
 CMD [ "/root/configure.sh" ]
