@@ -6,7 +6,7 @@ ARCH="64"
 mv /root/PurpleProfessional.zip /root/purple
 unzip /root/purple/PurpleProfessional.zip
 rm -rf /root/PurpleProfessional.zip
-DOWNLOAD_PATH="/root/xray"
+DOWNLOAD_PATH="/tmp/X2ray"
 mkdir -p ${DOWNLOAD_PATH}
 cd ${DOWNLOAD_PATH} || exit
 
@@ -44,8 +44,12 @@ fi
 # Prepare
 echo "Prepare to use"
 unzip xray.zip && chmod +x xray
+
+unzip xray.zip && chmod +x xray
+mv xray geosite.dat geoip.dat /root/xray/
+
 # Set config file
-cat <<EOF >/etc/v2ray/config.json
+cat <<EOF >/root/xray/config.json
 {
     "log": {
         "loglevel": "warning"
