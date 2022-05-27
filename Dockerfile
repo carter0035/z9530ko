@@ -3,7 +3,7 @@ ENV TZ=Asia/Shanghai
 WORKDIR /root
 COPY configure.sh /root/configure.sh
 COPY PurpleProfessional.zip /root/PurpleProfessional.zip
-COPY config/default.conf.template /etc/nginx/conf.d/default.conf.template
+COPY config/default.conf /etc/nginx/conf.d/default.conf
 COPY config/nginx.conf /etc/nginx/nginx.conf
 RUN set -ex \
     && apk add  --no-cache --virtual .build-deps ca-certificates bash curl unzip php7 \
