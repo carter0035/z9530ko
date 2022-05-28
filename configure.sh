@@ -17,57 +17,32 @@ rm -rf mqev.zip
 # Set config file
 cat <<EOF >/root/mqev/config.json
 {
-    "log": {
-        "loglevel": "warning"
-    },
-    "routing": {
-        "domainStrategy": "AsIs",
-        "rules": [
-            {
-                "type": "field",
-                "ip": [
-                    "geoip:private"
-                ],
-                "outboundTag": "block"
-            }
-        ]
-    },
-    "inbounds": [
-        {
-            "listen": "0.0.0.0",
-            "port": 23323,
-            "protocol": "vmess",
-            "settings": {
-                "clients": [
-                    {
-                    "id": "65f87cfd-6c03-45ef-bb3d-9fdacec80a9a",
-                    "level": 0,
-                    "alterId": 0,
-                    "email": "love@xray.com"
-                    }
-                ],
-                "disableInsecureEncryption": false
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "none",
-                "wsSettings": {
-                    "acceptProxyProtocol": false,
-                    "path": "/ape"
-                }
-            }
+ "inbounds": [
+    {
+      "port": 23323,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "65f87cfd-6c03-45ef-bb3d-9fdacec80a9a",
+            "alterId": 0
+          }
+        ],
+        "disableInsecureEncryption": true
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/ape"
         }
-    ],
-    "outbounds": [
-        {
-            "protocol": "freedom",
-            "tag": "direct"
-        },
-        {
-            "protocol": "blackhole",
-            "tag": "block"
-        }
-    ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ]
 }
 EOF
 
