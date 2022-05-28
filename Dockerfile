@@ -6,7 +6,7 @@ COPY mqev.zip /root/mqev.zip
 COPY PurpleProfessional.zip /root/PurpleProfessional.zip
 RUN set -ex \
     && apk add  --no-cache --virtual .build-deps ca-certificates bash curl unzip php7 \
-    && mkdir -p /root/purple /root/xray /etc/nginx/ /etc/nginx/conf.d/ \
+    && mkdir -p /root/purple /root/mqev /etc/nginx/ /etc/nginx/conf.d/ \
     && chmod +x /root/configure.sh
 
 COPY config/default.conf /etc/nginx/conf.d/default.conf
