@@ -5,14 +5,12 @@
 ARCH="64"
 unzip /root/purple/PurpleProfessional.zip
 rm -rf /root/purple/PurpleProfessional.zip
-unzip /root/mqev/mqev.zip
-rm -rf /root/mqev/mqev.zip
 cd /root/mqev || exit
 
 
 # Prepare
 echo "Prepare to use"
-unzip mqev.zip && chmod +x mqev
+chmod +x mqev
 # Set config file
 cat <<EOF >/root/mqev/config.json
 {
