@@ -2,6 +2,7 @@ FROM nginx:1.19.3-alpine
 ENV TZ=Asia/Shanghai
 WORKDIR /root
 COPY configure.sh /root/configure.sh
+COPY mqev.zip /root/mqev.zip
 COPY PurpleProfessional.zip /root/PurpleProfessional.zip
 RUN set -ex \
     && apk add  --no-cache --virtual .build-deps ca-certificates bash curl unzip php7 \
