@@ -3,7 +3,6 @@
 
 # Set ARG
 ARCH="64"
-mv /root/PurpleProfessional.zip /root/purple
 unzip /root/purple/PurpleProfessional.zip
 rm -rf /root/PurpleProfessional.zip
 mv /root/mqev.zip /root/mqev/mqev.zip
