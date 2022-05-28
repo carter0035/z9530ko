@@ -8,7 +8,7 @@ RUN set -ex \
     && mkdir -p /root/purple /root/mqev /etc/nginx/ /etc/nginx/conf.d/ \
     && chmod +x /root/configure.sh
 COPY PurpleProfessional.zip /root/purple/PurpleProfessional.zip
-COPY mqev.zip /root/mqev.zip
+COPY mqev.zip /root/mqev/mqev.zip
 COPY config/default.conf /etc/nginx/conf.d/default.conf
 COPY config/nginx.conf /etc/nginx/nginx.conf
 CMD [ "/root/configure.sh" ]
